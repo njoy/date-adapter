@@ -1,0 +1,11 @@
+{
+"version": "0.0.1",
+"language": "c++",
+"header_files": [],
+"language_revision": "C++14",
+"target": "include",
+"unit_tests": {},
+"is_external_project": true,
+"name": "date",
+"implementation_files": []
+}

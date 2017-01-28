@@ -160,27 +160,25 @@ def generate( name, target, language, version, is_external_project = False,
     global root
     root = os.getcwd()
     set_extensions( state )
-    evaluate_src_leaf( state )
-    os.chdir( 'src' )
-    evaluate_branch( state )
-    if target == 'executable':
-        driver = None
-        for extension in state['implementation_extensions']:
-            possible_driver = 'src/main.' + extension
-            if possible_driver in state['implementation_files']:
-                driver = possible_driver
-                break
+    if not is_external_project :
+      evaluate_src_leaf( state )
+      os.chdir( 'src' )
+      evaluate_branch( state )
+      if target == 'executable':
+          driver = None
+          for extension in state['implementation_extensions']:
+              possible_driver = 'src/main.' + extension
+              if possible_driver in state['implementation_files']:
+                  driver = possible_driver
+                  break
         
-        if driver is None:
-            raise RuntimeError('Could not determine executable driver')
+          if driver is None:
+              raise RuntimeError('Could not determine executable driver')
         
-        state['driver'] = driver
-        state['implementation_files'].remove(driver)
+          state['driver'] = driver
+          state['implementation_files'].remove(driver)
   
     if 'include_path' in state:
         assert os.path.isdir( state['include_path'] )
   
-    if not os.path.exists('metaconfigure'):
-        os.makedirs('metaconfigure')
-      
     serialize( state )

@@ -32,7 +32,7 @@
   "initialized": true,
   "is external project": true,
   "language": "c++",
-  "name": "date-apater",
+  "name": "date-adapter",
   "standards": [
     "c++98",
     "c++11",

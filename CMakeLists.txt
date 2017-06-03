@@ -2,7 +2,7 @@
 cmake_minimum_required( VERSION 3.2 ) 
 set( CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Supported configuration types" FORCE )
         
-project( date-apater LANGUAGES CXX )
+project( date-adapter LANGUAGES CXX )
 get_directory_property( is_subproject PARENT_DIRECTORY )
 include( CMakeDependentOption REQUIRED )
 
@@ -29,7 +29,7 @@ execute_process(
 message( STATUS "" )
 message( STATUS "-----------------------------------------------------------" )
 message( STATUS "" )
-message( STATUS "date-apater" )
+message( STATUS "date-adapter" )
 message( STATUS "Git current branch: ${GIT_BRANCH}" )
 message( STATUS "Git commit hash: ${GIT_HASH}" )
 message( STATUS "" )

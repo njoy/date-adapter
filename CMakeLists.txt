@@ -32,9 +32,9 @@ set( debug_flags "-O0" "-g" )
 ########################################################################
 
 add_library( date-adapter 
-    src/tz.cpp
+    src/src/tz.cpp
     )
-target_include_directories( date-adapter PUBLIC src/ )
+target_include_directories( date-adapter PUBLIC src/include)
 target_compile_options( date-adapter PRIVATE
     ${common_flags}
     $<$<BOOL:${strict_compile}>:${strict_flags}>

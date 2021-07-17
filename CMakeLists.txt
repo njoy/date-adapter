@@ -51,7 +51,4 @@ message( STATUS "Git commit hash: ${GIT_HASH}" )
 message( STATUS "" )
 message( STATUS "-----------------------------------------------------------" )
 
-add_library( date-adapter INTERFACE )
 target_include_directories( date-adapter INTERFACE src )
-target_include_directories( date-adapter INTERFACE
-                            "${CMAKE_CURRENT_SOURCE_DIR}/src" )
